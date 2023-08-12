@@ -1,5 +1,4 @@
-function decodeMorse(morseCode) {
-  let ref = { 
+const MORSE_CODE = {
     '.-':     'a',
     '-...':   'b',
     '-.-.':   'c',
@@ -36,15 +35,15 @@ function decodeMorse(morseCode) {
     '---..':  '8',
     '----.':  '9',
     '-----':  '0',
-  };
+};
 
-  return morseCode
-    .split('   ')
-    .map(
-      a => a
-        .split(' ')
-        .map(
-          b => ref[b]
-        ).join('')
-    ).join(' ');
+function decode(expr) {
+  
+  const decodeLetter = letter => {
+  return MORSE_CODE[letter];
+}
+}
+
+module.exports = {
+    decode
 }
