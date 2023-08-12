@@ -37,9 +37,19 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
-function decode(expr) {
-    // write your solution here
-}
+function decode(morseCode) {
+    outPut = "";
+
+    for (let i = 0; i < morseCode.split(" ").length; i++) {
+        if (i === "   ") {
+            outPut += " ";
+        } else {
+            outPut += MORSE_CODE[morseCode.split(" ")[i]];
+        }
+
+    }
+    return outPut;
+}}
 
 module.exports = {
     decode
