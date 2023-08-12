@@ -1,4 +1,5 @@
-const MORSE_TABLE = {
+function decodeMorse(morseCode) {
+  let ref = { 
     '.-':     'a',
     '-...':   'b',
     '-.-.':   'c',
@@ -35,22 +36,15 @@ const MORSE_TABLE = {
     '---..':  '8',
     '----.':  '9',
     '-----':  '0',
-};
+  };
 
-function decode(morseCode) {
-    outPut = "";
-
-    for (let i = 0; i < morseCode.split(" ").length; i++) {
-        if (i === "   ") {
-            outPut += " ";
-        } else {
-            outPut += MORSE_TABLE[morseCode.split(" ")[i]];
-        }
-
-    }
-    return outPut;
-}}
-
-module.exports = {
-    decode
+  return morseCode
+    .split('   ')
+    .map(
+      a => a
+        .split(' ')
+        .map(
+          b => ref[b]
+        ).join('')
+    ).join(' ');
 }
