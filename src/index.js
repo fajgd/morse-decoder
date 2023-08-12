@@ -44,7 +44,7 @@ function decode(morseCode) {
         if (i === "   ") {
             outPut += " ";
         } else {
-            outPut += MORSE_CODE[morseCode.split(" ")[i]];
+            outPut += MORSE_TABLE[morseCode.split(" ")[i]];
         }
 
     }
