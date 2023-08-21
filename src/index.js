@@ -37,13 +37,16 @@ const MORSE_CODE = {
     '-----':  '0',
 };
 
-function decode(expr) {
-  
-  const decodeLetter = letter => {
-  return MORSE_CODE[letter];
-}
-}
+decodeMorse = function(morseCode) {
+    outPut = "";
 
-module.exports = {
-    decode
+    for (var i = 0; i < morseCode.split(" ").length; i++) {
+        if (i === "   ") {
+            outPut += " ";
+        } else {
+            outPut += MORSE_CODE[morseCode.split(" ")[i]];
+        }
+
+    }
+    return outPut;
 }
